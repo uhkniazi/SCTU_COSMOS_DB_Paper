@@ -1,4 +1,4 @@
-# An Open-Source SQL Database Schema for Integrated Clinical and Translational Data Management in Cancer Research  - perspective of a UKCRC clinical trials unit
+# An Open-Source SQL Database Schema for Integrated Clinical and Translational Data Management in Clinical Trials - perspective of a Cancer Research UK clinical trials unit
 
 # Supplementary Material
 
