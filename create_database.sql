@@ -32,7 +32,7 @@ CREATE TABLE `clinicaldata` (
   KEY `fk_ClinicalData_Study1_idx` (`Study_idStudy`),
   CONSTRAINT `fk_ClinicalData_Study1` FOREIGN KEY (`Study_idStudy`) REFERENCES `study` (`idStudy`),
   CONSTRAINT `fk_ClinicalData_Subject1` FOREIGN KEY (`Subject_idUnit`) REFERENCES `subject` (`idUnit`)
-) ENGINE=InnoDB AUTO_INCREMENT=23161 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Table to hold all clinical and demographic data and any metadata related to a unit of analysis';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Table to hold all clinical and demographic data and any metadata related to a unit of analysis';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -73,7 +73,7 @@ CREATE TABLE `datalevel1` (
   UNIQUE KEY `idDataLevel1_UNIQUE` (`idDataLevel1`),
   KEY `fk_DataLevel1_Dataset1_idx` (`Dataset_idDataset`),
   CONSTRAINT `fk_DataLevel1_Dataset1` FOREIGN KEY (`Dataset_idDataset`) REFERENCES `dataset` (`idDataset`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This contains the processed data in a self contained format e.g. the count matrix with associated metadata all in the form of a R or SAS etc object. This is analysis ready data.';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This contains the processed data in a self contained format e.g. the count matrix with associated metadata all in the form of a R or SAS etc object. This is analysis ready data.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `dataset` (
   UNIQUE KEY `idDataset_UNIQUE` (`idDataset`),
   KEY `fk_Dataset_Study1_idx` (`Study_idStudy`),
   CONSTRAINT `fk_Dataset_Study1` FOREIGN KEY (`Study_idStudy`) REFERENCES `study` (`idStudy`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Each study can have multiple omics data sets and related information will go here';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Each study can have multiple omics data sets and related information will go here';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `omicssample` (
   KEY `fk_Sample_Subject1_idx` (`Subject_idUnit`),
   CONSTRAINT `fk_Sample_Dataset1` FOREIGN KEY (`Dataset_idDataset`) REFERENCES `dataset` (`idDataset`),
   CONSTRAINT `fk_Sample_Subject1` FOREIGN KEY (`Subject_idUnit`) REFERENCES `subject` (`idUnit`)
-) ENGINE=InnoDB AUTO_INCREMENT=759 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Each Omics Sample belongs to a dataset. It also belongs to a unit of analysis i.e. Subject_idUnit. One unit of analysis can have multiple samples if technical replicates were produced i.e. a biological sample from a subject sequenced multiple times.';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Each Omics Sample belongs to a dataset. It also belongs to a unit of analysis i.e. Subject_idUnit. One unit of analysis can have multiple samples if technical replicates were produced i.e. a biological sample from a subject sequenced multiple times.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +136,7 @@ CREATE TABLE `omicssamplemetadata` (
   UNIQUE KEY `id_UNIQUE` (`idOmicsSampleMetaData`),
   KEY `fk_MetadataSample_Sample1_idx` (`OmicsSample_idOmicsSample`),
   CONSTRAINT `fk_MetadataSample_Sample1` FOREIGN KEY (`OmicsSample_idOmicsSample`) REFERENCES `omicssample` (`idOmicsSample`)
-) ENGINE=InnoDB AUTO_INCREMENT=10613 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The metadata related to the omics sample. this usually will be the lab associated additional information e.g. Sequencing lanes, batches, RNA-quality etc';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The metadata related to the omics sample. this usually will be the lab associated additional information e.g. Sequencing lanes, batches, RNA-quality etc';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,7 +160,7 @@ CREATE TABLE `results` (
   KEY `fk_Results_Dataset1_idx` (`Dataset_idDataset`),
   CONSTRAINT `fk_Results_Dataset1` FOREIGN KEY (`Dataset_idDataset`) REFERENCES `dataset` (`idDataset`),
   CONSTRAINT `fk_Results_Study1` FOREIGN KEY (`Study_idStudy`) REFERENCES `study` (`idStudy`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Results table with links to figures, reports excel sheets and misc';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Results table with links to figures, reports excel sheets and misc';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,7 +183,7 @@ CREATE TABLE `study` (
   `Documents_location` text,
   PRIMARY KEY (`idStudy`),
   UNIQUE KEY `idStudy_UNIQUE` (`idStudy`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This is the main table of the database holding information about a study and other associated information relevant here.';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This is the main table of the database holding information about a study and other associated information relevant here.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +202,7 @@ CREATE TABLE `studysampletype` (
   UNIQUE KEY `id_UNIQUE` (`idStudySampleType`),
   KEY `fk_StudySampleType_Study_idx` (`Study_idStudy`),
   CONSTRAINT `fk_StudySampleType_Study` FOREIGN KEY (`Study_idStudy`) REFERENCES `study` (`idStudy`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This table contains additional information about the type of translational data e.g. a study can collect multiple types of data and some general information can be held in this table';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This table contains additional information about the type of translational data e.g. a study can collect multiple types of data and some general information can be held in this table';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +222,7 @@ CREATE TABLE `subject` (
   UNIQUE KEY `idUnit_UNIQUE` (`idUnit`),
   KEY `fk_Subject_Study1_idx` (`Study_idStudy`) /*!80000 INVISIBLE */,
   CONSTRAINT `fk_Subject_Study1` FOREIGN KEY (`Study_idStudy`) REFERENCES `study` (`idStudy`)
-) ENGINE=InnoDB AUTO_INCREMENT=2547 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This table will contain information about each unit of analysis. Typically this will be a combination of subject id and the visit number.';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='This table will contain information about each unit of analysis. Typically this will be a combination of subject id and the visit number.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
