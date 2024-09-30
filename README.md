@@ -1,5 +1,5 @@
 # Manuscript Under Review in Journal Clinical Trials
-# An Open-Source SQL Database Schema for Integrated Clinical and Translational Data Management in Clinical Trials - perspective of a Cancer Research UK clinical trials unit
+# An Open-Source SQL Database Schema for Integrated Clinical and Translational Data Management in Clinical Trials
 
 # Supplementary Material
 
