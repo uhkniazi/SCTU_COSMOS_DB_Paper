@@ -1,4 +1,4 @@
-# Manuscript Under Review in Journal Clinical Trials
+# Manuscript Accepted in Journal Clinical Trials - awaiting publication
 # An Open-Source SQL Database Schema for Integrated Clinical and Translational Data Management in Clinical Trials
 
 # Supplementary Material
