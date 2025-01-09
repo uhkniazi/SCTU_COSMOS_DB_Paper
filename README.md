@@ -1,4 +1,4 @@
-# Manuscript Accepted in Journal Clinical Trials - (https://doi.org/10.1177/1740774524130)
+# Manuscript Accepted in Journal Clinical Trials - (https://doi.org/10.1177/17407745241304331)
 # An Open-Source SQL Database Schema for Integrated Clinical and Translational Data Management in Clinical Trials
 
 # Supplementary Material
